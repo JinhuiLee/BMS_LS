@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="stateofcharge" column="stateofcharge"/>
 		<result property="temperature" column="temperature"/>
 		<result property="timestp" column="timestp"/>
-		
+		<result property="proc" column="proc"/>
 	</resultMap>
 	
 	
@@ -47,7 +47,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="add" useGeneratedKeys="true" keyProperty="id"  parameterType="BatteryData" >
-		insert into t_batteryData values(null,#{battery_id},#{ch_cur},#{dis_cur},#{temperature},#{battery_status},#{charger_status},now(),#{stateofcharge})
+		insert into t_batteryData values(null,#{battery_id},#{ch_cur},#{dis_cur},#{temperature},#{battery_status},#{charger_status},now(),#{stateofcharge},#{proc})
 	</insert>
 	
 </mapper> 

@@ -18,10 +18,19 @@ public class BatteryData {
 	private Integer charger_status;
 	private Date timestp;
 	private Integer stateofcharge;
+	private Integer proc = 0;
 	
 	private String timestpDateStr; //string of releaseDate, year, month and day only	
 	
 	
+	@Override
+	public String toString() {
+		return "BatteryData [id=" + id + ", battery_id=" + battery_id + ", ch_cur=" + ch_cur + ", dis_cur=" + dis_cur
+				+ ", temperature=" + temperature + ", battery_status=" + battery_status + ", charger_status="
+				+ charger_status + ", timestp=" + timestp + ", stateofcharge=" + stateofcharge + ", proc=" + proc
+				+ ", timestpDateStr=" + timestpDateStr + "]";
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -100,6 +109,14 @@ public class BatteryData {
 
 	public void setTimestpDateStr(String timestpDateStr) {
 		this.timestpDateStr = timestpDateStr;
+	}
+
+	public Integer getProc() {
+		return proc;
+	}
+
+	public void setProc(Integer proc) {
+		this.proc = proc;
 	}
 	
 	

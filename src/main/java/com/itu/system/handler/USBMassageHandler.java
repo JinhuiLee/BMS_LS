@@ -49,7 +49,9 @@ public class USBMassageHandler {
 			
 		List<Integer> dataList = new ArrayList<>();
 		for(byte n : data){
-			dataList.add((int)n);
+			
+			System.out.println((int)(n & 0xFF));
+			dataList.add((int)(n & 0xFF));
 		}
 		Integer type = dataList.get(0);
 		Integer action = dataList.get(1);
@@ -67,8 +69,8 @@ public class USBMassageHandler {
 				batteryParameterService.getByBatteryId(batteryParameter);
 				
 				//map adc result to real voltage value
-				batteryData.setCh_cur((int)(1000 * dataList.get(i++) / ADC_FULL_SCALE_VALUE * ADC_REF / batteryParameter.getSensingGain() / batteryParameter.getrChargeValue()));
-				batteryData.setDis_cur((int)(1000 * dataList.get(i++) / ADC_FULL_SCALE_VALUE * ADC_REF / batteryParameter.getrDischargeValue()));
+				batteryData.setCh_cur((int)(1000 * dataList.get(i++) / ADC_FULL_SCALE_VALUE * ADC_REF));// / batteryParameter.getSensingGain() / batteryParameter.getrChargeValue()));
+				batteryData.setDis_cur((int)(1000 * dataList.get(i++) / ADC_FULL_SCALE_VALUE * ADC_REF));// / batteryParameter.getrDischargeValue()));
 				batteryData.setTemperature((double)(int)dataList.get(i++));
 				batteryData.setStateofcharge(dataList.get(i++));
 				batteryData.setCharger_status((int)dataList.get(i) & 1);

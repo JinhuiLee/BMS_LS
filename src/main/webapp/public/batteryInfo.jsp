@@ -78,7 +78,7 @@
   		<th field="batteryName" width="200" align="center">Battery Name</th>
   		<th field="batteryInfo" width="100" align="center">Battery Info</th>
   		<th field="latestBatteryData.timestp" width="100" align="center" formatter="formatTime">Time</th> 		
-  		<th field="latestBatteryData.ch_cur" width="200" align="center" formatter="formatDischargeCurrent">Charge Current</th>
+  		<th field="latestBatteryData.ch_cur" width="200" align="center" formatter="formatChargeCurrent">Charge Current</th>
   		<th field="latestBatteryData.dis_cur" width="200" align="center" formatter="formatDischargeCurrent">Discharge Current</th>
   		<th field="latestBatteryData.battery_status" width="200" align="center" formatter="formatBatteryStatus">Battery Status</th>
   		<th field="latestBatteryData.stateofcharge" width="200" align="center" formatter="formatSoC">SoC(%)</th>

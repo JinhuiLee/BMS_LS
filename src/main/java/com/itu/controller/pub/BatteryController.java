@@ -46,6 +46,8 @@ public class BatteryController {
 				System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+b.getId());
 				map.put("battery_id", b.getId());
 				BatteryData latestBd = batteryDataSerivce.getLatestDataByBatteryId(map);
+				System.out.println("*********************************************");
+				System.out.println(latestBd);
 				b.setLatestBatteryData(latestBd);
 			}
 		}

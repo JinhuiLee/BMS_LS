@@ -16,7 +16,7 @@ public class USBMessageHandlerTest {
 		}
 		
 		ApplicationContext aContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-		USBMassageHandler uSBMassageHandler = (USBMassageHandler) aContext.getBean("usbMassageHandler");
+		USBMassageHandler uSBMassageHandler = (USBMassageHandler) aContext.getBean("USBMassageHandler");
 		uSBMassageHandler.handleMessage(data);
 		System.out.println("!!!!!!!!!insert data!!!!!!!!!!");
 	}

@@ -24,6 +24,8 @@ import com.itu.service.BatteryDataServise;
 import com.itu.service.BatteryService;
 import com.itu.service.UserService;
 import com.itu.util.ResponseUtil;
+import com.itu.util.can.USBUtil;
+
 
 import net.sf.json.JSONObject;
 
@@ -108,8 +110,9 @@ public class SystemController {
 	@RequestMapping("/connect")
 	public String connect(HttpServletResponse response) throws Exception{
 		//method for connecting  to CAN
-		//boolen state = USBUtil.connect();
-		boolean state = true;
+		USBUtil usbutil = new USBUtil();
+		boolean state = usbutil.connect();
+		//boolean state = true;
 		
 		JSONObject result = new JSONObject();
 		if(state){
